@@ -1,0 +1,9 @@
+Definition of ready pro každé user story.
+
+Vytvořená user story
+Hotová acceptance criteria
+Obsahuje description
+User story má své business value
+Byla vyhrazena délka práce na user story
+Splnitelné v konkrétním sprintu
+User stories, na kterých závisí jsou hotovy
