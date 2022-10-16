@@ -1,1 +1,6 @@
+Definition of done pro každou user story.
 
+Úvodní studie problému.
+Správné naprogramování s implementací veškerých požadovaných funkcí.
+Řádné otestování implementace.
+Důkladná dokumentace.
