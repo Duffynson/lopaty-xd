@@ -1,6 +1,6 @@
 Definition of ready pro každé user story.
 
-Vytvořená user story
+Vytvořené user story
 Hotová acceptance criteria
 Obsahuje description
 User story má své business value
