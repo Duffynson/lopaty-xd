@@ -36,7 +36,6 @@ CREATE TABLE Rizeni(
     );
 CREATE TABLE Recenze(
     ID_recenze INT NOT NULL,
-    ID_Rizeni INT NOT NULL,
     originalita INT NOT NULL,
     aktualnost INT NOT NULL,
     jazyk INT NOT NULL,
