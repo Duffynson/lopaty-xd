@@ -2,7 +2,7 @@
 include_once './connect.php'; //Natahne si prihlasovaci udaje.
 
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $db_name);
 $sql = "SELECT vydani FROM Journal"; //Vytahne Vsechny cisla casopisu.
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
