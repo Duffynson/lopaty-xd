@@ -1,3 +1,4 @@
+/*vytvoření tabulky pro uživatele*/
 CREATE TABLE Users(
     ID_user INT NOT NULL,
     firstname VARCHAR(250),
@@ -9,6 +10,8 @@ CREATE TABLE Users(
     role INT NOT NULL,
     PRIMARY KEY (ID_user)
 );
+/*vytvoření tabulky pro články*/
+
     CREATE TABLE Article(
     ID_article INT NOT NULL,
     title VARCHAR(100),
@@ -18,6 +21,7 @@ CREATE TABLE Users(
     PRIMARY KEY (ID_article),
     FOREIGN KEY (ID_user) REFERENCES Users(id_user)
     );
+/*vytvoření tabulky pro časopis*/
 
 CREATE TABLE Journal(
     ID_journal INT NOT NULL,
@@ -26,6 +30,8 @@ CREATE TABLE Journal(
     FOREIGN KEY (ID_article) REFERENCES Article(ID_article),
     PRIMARY KEY (ID_journal)
 );
+/*vytvoření tabulky pro řízení*/
+
 CREATE TABLE Rizeni(
     ID_rizeni INT NOT NULL,
     redaktor VARCHAR(100),
@@ -36,6 +42,8 @@ CREATE TABLE Rizeni(
     komentar_sefredaktora TEXT,
     PRIMARY KEY (ID_rizeni)
     );
+    /*vytvoření tabulky pro recenze*/
+
 CREATE TABLE Recenze(
     ID_recenze INT NOT NULL,
     originalita INT NOT NULL,
