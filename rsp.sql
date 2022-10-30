@@ -4,6 +4,8 @@ CREATE TABLE Users(
     lastname VARCHAR(250),
     email VARCHAR(250),
     password VARCHAR(250),
+    telefon VARCHAR(15),
+    adresa VARCHAR(100),
     role INT NOT NULL,
     PRIMARY KEY (ID_user)
 );
