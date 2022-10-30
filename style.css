@@ -1,0 +1,150 @@
+/* CSS Document for RSP team "lopaty xd" */
+/*    Copyright© by VSPJ 2022/2023       */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #000;
+} 
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 10;
+}
+
+header.sticky {
+    padding: 5px 100px;
+    background: #000;
+    
+}
+
+header .logo {
+    position: relative;
+    font-weight: 700;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+header img {
+    position: relative;
+    transition: 0.6s;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+    border-radius: 20px;
+    background: #000;
+    border: 1px dashed white;
+    margin-right: 2px;
+}
+
+header ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #FFF;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.6s;
+}
+
+.spacing {
+    margin-right: 250px;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    background: url(images/background.jpg);
+    background-size: cover;
+    background-repeat: repeat-y;
+}
+
+/* ---------------------------------------  Menu po scrolnutí stránky ------------------------------------ */
+
+header.sticky .logo, header.sticky ul li a, {
+    color: #FFF;
+}
+
+header.sticky ul li {
+    border: none;
+    margin-right: 4px;
+}
+
+header.sticky ul li.spacing {
+    margin-right: 250px;
+}
+
+header.sticky img {
+    height: 55px;
+    width: 55px;
+}
+
+.main-text {
+    padding: 20px 5%;
+    font-size: 18px;
+    color: white;    
+}
+
+.second-text {
+    padding: 20px 5%;
+    font-size: 18px;
+    color: white;    
+}
+
+.third-text {
+    padding: 20px 5%;
+    font-size: 18px;
+    color: white;    
+}
+
+h1 {
+    color: white;
+    padding: 200px 5% 0 5%;
+    font-size: 42px;
+}
+
+.odkaz:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.odkaz:visited {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.odkaz:hover {
+  color: Orange;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+p {
+    text-shadow: 1px 1px 10 Black;
+}    
