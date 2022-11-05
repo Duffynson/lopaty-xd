@@ -3,7 +3,7 @@ CREATE TABLE Users(
     ID_user INT NOT NULL,
     firstname VARCHAR(250),
     lastname VARCHAR(250),
-    email VARCHAR(250),
+    email VARCHAR(250) UNIQUE,
     password VARCHAR(250),
     telefon VARCHAR(15),
     adresa VARCHAR(100),
