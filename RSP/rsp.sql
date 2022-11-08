@@ -25,7 +25,7 @@ CREATE TABLE Users(
 
 CREATE TABLE Journal(
     ID_journal INT NOT NULL AUTO_INCREMENT,
-    vydani VARCHAR(50),
+    vydani VARCHAR(50) UNIQUE,
     ID_article INT NOT NULL,
     FOREIGN KEY (ID_article) REFERENCES Article(ID_article),
     PRIMARY KEY (ID_journal)
