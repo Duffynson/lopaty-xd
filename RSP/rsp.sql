@@ -1,6 +1,6 @@
 /*vytvoření tabulky pro uživatele*/
 CREATE TABLE Users(
-    ID_user INT NOT NULL,
+    ID_user INT NOT NULL AUTO_INCREMENT,
     firstname VARCHAR(250),
     lastname VARCHAR(250),
     email VARCHAR(250) UNIQUE,
@@ -13,7 +13,7 @@ CREATE TABLE Users(
 /*vytvoření tabulky pro články*/
 
     CREATE TABLE Article(
-    ID_article INT NOT NULL,
+    ID_article INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(100),
     datum_vydani DATE,
     soubor TEXT,
@@ -24,7 +24,7 @@ CREATE TABLE Users(
 /*vytvoření tabulky pro časopis*/
 
 CREATE TABLE Journal(
-    ID_journal INT NOT NULL,
+    ID_journal INT NOT NULL AUTO_INCREMENT,
     vydani VARCHAR(50),
     ID_article INT NOT NULL,
     FOREIGN KEY (ID_article) REFERENCES Article(ID_article),
@@ -33,7 +33,7 @@ CREATE TABLE Journal(
 /*vytvoření tabulky pro řízení*/
 
 CREATE TABLE Rizeni(
-    ID_rizeni INT NOT NULL,
+    ID_rizeni INT NOT NULL AUTO_INCREMENT,
     redaktor VARCHAR(100),
     status VARCHAR(50),
     datum_vytvoreni DATE,
@@ -45,7 +45,7 @@ CREATE TABLE Rizeni(
     /*vytvoření tabulky pro recenze*/
 
 CREATE TABLE Recenze(
-    ID_recenze INT NOT NULL,
+    ID_recenze INT NOT NULL AUTO_INCREMENT,
     originalita INT NOT NULL,
     aktualnost INT NOT NULL,
     jazyk INT NOT NULL,
