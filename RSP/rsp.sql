@@ -1,6 +1,6 @@
 /*vytvoření tabulky pro uživatele*/
 CREATE TABLE Users(
-    ID_user INT NOT NULL AUTO INCREMENT,
+    ID_user INT NOT NULL AUTO_INCREMENT,
     firstname VARCHAR(250),
     lastname VARCHAR(250),
     email VARCHAR(250) UNIQUE,

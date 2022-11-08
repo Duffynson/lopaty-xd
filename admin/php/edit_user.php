@@ -32,7 +32,7 @@ if(!empty($results)) {
     exit(json_encode($results));
 }
 
-if($stmt = $conn->prepare("UPDATE users SET firstname=?, lastname=?, email=?, role=?, phone=?, address=? WHERE id_user=?")) {
+if($stmt = $conn->prepare("UPDATE Users SET firstname=?, lastname=?, email=?, role=?, phone=?, address=? WHERE id_user=?")) {
     if($_SESSION['role'] < 4) $role = $_SESSION['role'];
     else $role = (int)$_POST['role'];
 

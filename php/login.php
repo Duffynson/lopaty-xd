@@ -31,7 +31,7 @@ if(!empty($results)) {
     exit(json_encode($results));
 }
 
-if ($stmt = $conn->prepare("SELECT * FROM users WHERE email = ?")) {
+if ($stmt = $conn->prepare("SELECT * FROM Users WHERE email = ?")) {
     $email = htmlspecialchars(strip_tags($_POST["email"]));
     $stmt->bind_param("s", $email);
     if($stmt->execute()) {

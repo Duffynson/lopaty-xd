@@ -15,7 +15,7 @@ Pokud je uživatel administrátor, může upravovat i ostatní uživatele
 Pokud není, může upravovat pouze sebe
 
 */
-if($stmt = $conn->prepare("SELECT id_user, firstname, lastname, email, role, phone, address FROM users WHERE id_user=?")) {
+if($stmt = $conn->prepare("SELECT id_user, firstname, lastname, email, role, phone, address FROM Users WHERE id_user=?")) {
     $id_user = $_GET["id"];
     $stmt->bind_param("i", $id_user);
     if($stmt->execute()) {

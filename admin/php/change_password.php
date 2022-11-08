@@ -28,7 +28,7 @@ if(!empty($results)) {
     exit(json_encode($results));
 }
 
-if($stmt = $conn->prepare("UPDATE users SET password = ? WHERE id_user = ?")) {
+if($stmt = $conn->prepare("UPDATE Users SET password = ? WHERE id_user = ?")) {
     $password = htmlspecialchars(strip_tags($_POST["password"]));
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
     $stmt->bind_param("si", $password_hashed, $_POST["id_user"]);

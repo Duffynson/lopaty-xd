@@ -32,7 +32,7 @@ if(!empty($results)) {
     exit(json_encode($results));
 }
 
-if ($stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, password) VALUES (?, ?, ?, ?)")) {
+if ($stmt = $conn->prepare("INSERT INTO Users (firstname, lastname, email, password) VALUES (?, ?, ?, ?)")) {
     $firstname = htmlspecialchars(strip_tags($_POST["firstname"]));
     $firstname = trim($firstname);
     $lastname = htmlspecialchars(strip_tags($_POST["lastname"]));
@@ -43,6 +43,7 @@ if ($stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, passw
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
     $stmt->bind_param('ssss', $firstname, $lastname, $email,  $password_hashed);
+    
     if($stmt->execute()) {
         $_SESSION['id_user'] = $conn->insert_id;
         $_SESSION['firstname'] = $_POST["firstname"];
