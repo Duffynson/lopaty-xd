@@ -19,7 +19,7 @@ CREATE TABLE Users(
     soubor TEXT,
     ID_user INT,
     PRIMARY KEY (ID_article),
-    FOREIGN KEY (ID_user) REFERENCES Users(id_user)
+    FOREIGN KEY (ID_user) REFERENCES Users(ID_user)
     );
 /*vytvoření tabulky pro časopis*/
 
