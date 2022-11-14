@@ -1,9 +1,3 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-</head>
-
 <?php
    session_start();
    require_once '../../php/db.php';
@@ -17,23 +11,17 @@
 
       if(in_array($file_ext,$extensions)=== true) {
          move_uploaded_file($file_tmp,"../../clanky/".$file_name); //Uploadne soubor na server
-         echo "Nahrání proběhlo úspěšně.";
          $date = date('Y-m-d');
          mysqli_query($conn, "INSERT INTO Article (title, datum_vydani, soubor, ID_user) values('{$_POST['articleName']}', '{$date}', '{$file_name}', {$_SESSION['id_user']})"); //Udela novy zaznam do databaze
+         mysqli_close($conn);
+         exit(json_encode(array("success" => "Nahrání proběhlo úspěšně")));
+         //echo "Nahrání proběhlo úspěšně.";
       }else{
-         echo "Článek musí být ve formátech pdf, docx nebo doc.";
+         //echo "Článek musí být ve formátech pdf, docx nebo doc.";
+         exit(json_encode(array("error" => "Článek musí být ve formátech pdf, docx nebo doc.")));
       }
    }
    mysqli_close($conn);
+   http_response_code(500);
 ?>
-<html>
-   <body>
-      <form action="" method="POST" enctype="multipart/form-data">
-         <label>Zadejte název článku:</label>
-         <input type="text" name="articleName"/><br>
-         <input type="file" name="soubor"/>
-         <input type="submit"/>				
-      </form>      
-   </body>
-</html>
 

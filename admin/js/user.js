@@ -104,7 +104,6 @@ document.querySelector('.change-password').addEventListener('submit', async (e) 
     }
 })
 
-
 const showAlert = (message, type, disposeTime) => {
     const alert = document.querySelector(`.alert-${type}`);
     alert.textContent = message;
