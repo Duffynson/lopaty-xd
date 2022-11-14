@@ -20,7 +20,7 @@
       }      
 
       if(empty($errors)==true) {
-         move_uploaded_file($file_tmp,"../clanky/".$file_name); //Uploadne soubor na server
+         move_uploaded_file($file_tmp,"../../clanky/".$file_name); //Uploadne soubor na server
          echo "Success";
          $date = date('Y-m-d');
          mysqli_query("INSERT INTO Article (title, datum_vydani, soubor, ID_user) values('$_POST[articleName]','$date', '$file_name', '$_SESSION['id_user']')"); //Udela novy zaznam do databaze
