@@ -5,6 +5,7 @@
 </head>
 
 <?php
+   session_start();
    require_once '../../php/db.php';
 
    if(isset($_FILES['soubor'])){
