@@ -8,7 +8,6 @@
    require_once '../../php/db.php';
 
    if(isset($_FILES['soubor'])){
-      $errors= array();
       $file_name = $_FILES['soubor']['name'];
       $file_tmp = $_FILES['soubor']['tmp_name'];
       $tmp = explode('.',$file_name);
@@ -16,7 +15,7 @@
       $extensions= array("pdf","doc","docx");
 
       if(in_array($file_ext,$extensions)=== false){
-         $errors[]="Článek musí být ve formátech pdf, docx nebo doc.";
+         echo "Článek musí být ve formátech pdf, docx nebo doc.";
       }      
 
       if(empty($errors)==true) {
@@ -25,7 +24,7 @@
          $date = date('Y-m-d');
          mysqli_query("INSERT INTO Article (title, datum_vydani, soubor, ID_user) values('$_POST[articleName]','$date', '$file_name', '$_SESSION['id_user']')"); //Udela novy zaznam do databaze
       }else{
-         print_r($errors[0]);
+         echo "Něco se nepodařilo";
       }
    }
    mysqli_close($conn);
