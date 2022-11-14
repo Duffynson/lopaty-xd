@@ -29,7 +29,7 @@
 <html>
    <body>
       <form action="" method="POST" enctype="multipart/form-data">
-         <label>Zadejte název článku: (Pro nahrani dalsi verze pouzijte originalni nazev + _new)</label>
+         <label>Zadejte název článku:</label>
          <input type="text" name="articleName"/><br>
          <input type="file" name="soubor"/>
          <input type="submit"/>				
