@@ -22,7 +22,7 @@ const renderUsers = async () => {
                 <td scope="col" class="lastname">${user.lastname}</td>
                 <td scope="col" class="email">${user.email}</td>
                 <td scope="col" class="role">${roles[user.role]}</td>
-                <td scope="col" class="actions"><a href="./user?id=${user.id_user}"><i class="fa-solid fa-pen-to-square"></i></a> </td>
+                <td scope="col" class="actions"><a href="./user?id=${user.ID_user}"><i class="fa-solid fa-pen-to-square"></i></a> </td>
             `; 
             tbody.appendChild(el);
         })
