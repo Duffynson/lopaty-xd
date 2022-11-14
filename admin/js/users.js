@@ -17,7 +17,7 @@ const renderUsers = async () => {
         usersData.forEach(user => {
             const el = document.createElement('tr');
             el.innerHTML = `
-                <td scope="col" class="user_id px-3">${user.id_user}</td>
+                <td scope="col" class="user_id px-3">${user.ID_user}</td>
                 <td scope="col" class="firstname">${user.firstname}</td>
                 <td scope="col" class="lastname">${user.lastname}</td>
                 <td scope="col" class="email">${user.email}</td>
