@@ -1,13 +1,13 @@
 /*vytvoření tabulky pro uživatele*/
 CREATE TABLE Users(
     ID_user INT NOT NULL AUTO_INCREMENT,
-    firstname VARCHAR(250),
-    lastname VARCHAR(250),
-    email VARCHAR(250) UNIQUE,
-    password VARCHAR(250),
+    firstname VARCHAR(250) NOT NULL,
+    lastname VARCHAR(250) NOT NULL,
+    email VARCHAR(250) UNIQUE NOT NULL,
+    password VARCHAR(250) NOT NULL,
     phone VARCHAR(15),
     address VARCHAR(100),
-    role INT NOT NULL,
+    role INT NOT NULL DEFAULT '0',
     PRIMARY KEY (ID_user)
 );
 /*vytvoření tabulky pro články*/
