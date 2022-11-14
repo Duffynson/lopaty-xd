@@ -14,17 +14,13 @@
       $file_ext = strtolower(end($tmp));
       $extensions= array("pdf","doc","docx");
 
-      if(in_array($file_ext,$extensions)=== false){
-         echo "Článek musí být ve formátech pdf, docx nebo doc.";
-      }      
-
-      if(empty($errors)==true) {
+      if(in_array($file_ext,$extensions)=== true) {
          move_uploaded_file($file_tmp,"../../clanky/".$file_name); //Uploadne soubor na server
-         echo "Success";
+         echo "Nahrání proběhlo úspěšně.";
          $date = date('Y-m-d');
          mysqli_query("INSERT INTO Article (title, datum_vydani, soubor, ID_user) values({$_POST[$articleName]},{$date}, {$file_name}, {$_SESSION['id_user']})"); //Udela novy zaznam do databaze
       }else{
-         echo "Něco se nepodařilo";
+         echo "Článek musí být ve formátech pdf, docx nebo doc.";
       }
    }
    mysqli_close($conn);
