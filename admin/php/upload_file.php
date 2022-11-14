@@ -28,7 +28,7 @@
          print_r($errors[0]);
       }
    }
-   mysqli_close($spojeni);
+   mysqli_close($conn);
 ?>
 <html>
    <body>
