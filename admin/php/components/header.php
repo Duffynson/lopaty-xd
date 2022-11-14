@@ -31,7 +31,15 @@
           <span>Agenda</span>
         </h6> "; ?>
           <ul class="nav flex-column">
-          <?php if(isset($_SESSION['id_user'])) echo "
+          <?php 
+            if(isset($_SESSION['id_user'])) echo "
+            <li class='nav-item'>
+                <a class='nav-link' aria-current='page' href='./clanek'>
+                <i class='fa-solid fa-list-check fa-fw'></i>
+              Přidat článek
+              </a>
+            </li>";
+            if(isset($_SESSION['id_user'])) echo "
             <li class='nav-item'>
                 <a class='nav-link' aria-current='page' href='./clanky'>
                 <i class='fa-solid fa-users fa-fw'></i>
