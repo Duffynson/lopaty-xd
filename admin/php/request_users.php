@@ -11,7 +11,7 @@ if(!isset($_SESSION['id_user']) || $_SESSION['role'] != 4) {
 /*
 Vybere všechny uživatele z databáze
 */
-if($stmt = $conn->prepare("SELECT * FROM Users ORDER BY ID_user ASC")) {
+if($stmt = $conn->prepare("SELECT * FROM Users ORDER BY id_user ASC")) {
     $stmt->execute();
     $result = $stmt->get_result();
     $data = $result->fetch_all(MYSQLI_ASSOC);
