@@ -35,7 +35,7 @@
             if(isset($_SESSION['id_user'])) echo "
             <li class='nav-item'>
                 <a class='nav-link' aria-current='page' href='./clanek'>
-                <i class='fa-solid fa-list-check fa-fw'></i>
+                <i class='fa-solid fa-plus fa-fw'></i>
               Přidat článek
               </a>
             </li>";
