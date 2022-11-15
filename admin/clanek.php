@@ -29,7 +29,7 @@ include_once './php/components/header.php';
          <input type="text" name="articleName" class="form-control rounded-0" placeholder="">
       <div class="file-field">
       <div class="float-left p-3">
-         <input type="file" name="soubor" class="rounded-0">
+         <input type="file" name="soubor" class="rounded-0 form-control">
       </div>
       <div class="file-path-wrapper m-2 p-2 text-center">
           <input class="file-path validate btn btn-success rounded-0" type="submit" value="Nahrát článek">
