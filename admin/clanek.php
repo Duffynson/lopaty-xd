@@ -12,7 +12,10 @@ include_once './php/components/header.php';
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Přidání článku</h1>
       </div>
-      
+      <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
+      </div>
+      <div class="alert alert-danger alert-error alert-dismissible fade show d-none" role="alert">
+     </div>
       <div class="container">
       <div class="d-flex justify-content-center p-3 w-50 m-auto">
       <div class="card rounded-0">
