@@ -24,7 +24,7 @@ include_once './php/components/header.php';
       </h5>
     
       <div class="card-body px-lg-5 pt-0">    
-      <form method="POST" class="add-arcticle md-form" style="color: #757575;">
+      <form method="POST" class="add-article md-form" style="color: #757575;">
          <label for="input">Název článku</label>
          <input type="text" name="articleName" class="form-control rounded-0" placeholder="">
       <div class="file-field">
