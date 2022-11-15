@@ -13,7 +13,7 @@ include_once './php/components/header.php';
         <h1 class="h2">Články</h1>
       </div>
       
-      <div class="align-center">
+      <div class="d-flex justify-content-center">
       <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
       </div>
       <div class="alert alert-danger alert-error alert-dismissible fade show d-none" role="alert">
