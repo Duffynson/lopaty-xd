@@ -13,18 +13,18 @@ include_once './php/components/header.php';
         <h1 class="h2">Články</h1>
       </div>
       
+      <div class="align-center">
       <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
       </div>
-
       <div class="alert alert-danger alert-error alert-dismissible fade show d-none" role="alert">
       </div>
-
       <form method="POST" class="add-article">
          <label>Zadejte název článku:</label>
-         <input type="text" name="articleName"/><br>
+         <input type="text" name="articleName" class="rounded-0"/><br>
          <input type="file" name="soubor"/>
          <input type="submit"/>				
       </form>
+      </div>
 
     </main>
 
