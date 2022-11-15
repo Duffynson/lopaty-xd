@@ -20,7 +20,7 @@ include_once './php/components/header.php';
       <div class="d-flex justify-content-center p-3 w-50 m-auto">
       <div class="card rounded-0">
 
-      <h5 class="card-header info-color white-text bg bg-dark text-center py-4 rounded-0">
+      <h5 class="card-header info-color white-text bg bg-dark text-center py-4 mb-2 rounded-0">
       </h5>
     
       <div class="card-body px-lg-5 pt-0">    
