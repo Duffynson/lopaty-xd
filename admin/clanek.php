@@ -10,7 +10,7 @@ include_once './php/components/header.php';
 ?>
 
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2 justify-content-center">Přidání článku</h1>
+        <h1 class="h2">Přidání článku</h1>
       </div>
       
       <div class="d-flex justify-content-center">
@@ -19,9 +19,9 @@ include_once './php/components/header.php';
       <div class="alert alert-danger alert-error alert-dismissible fade show d-none" role="alert">
       </div>
       <form method="POST" class="add-article">
-         <label>Zadejte název článku:</label>
+         <label>Název článku</label><br>
          <input type="text" name="articleName" class="rounded-0"/><br>
-         <input type="file" name="soubor"/>
+         <input type="file" name="soubor"/><br>
          <input type="submit"/>				
       </form>
       </div>
