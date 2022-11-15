@@ -9,7 +9,7 @@
     </div>  
     <div class="footer-links float-sm-end">
       <a href="./" class="px-2 text-muted">Domů</a>
-      <a href="./pokyny" class=" px-2 text-muted">Jak publikovat</a>
+      <a href="./publish" class=" px-2 text-muted">Jak publikovat</a>
     </div>
   </div>
 </footer>
