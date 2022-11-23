@@ -1,6 +1,6 @@
 <?php 
 
-$db_servername = "34.118.88.144";
+$db_servername = "34.116.235.60";
 $db_username = "rsp_user";
 $db_password = "uOb3jlOI";
 $db_name = "rsp";
