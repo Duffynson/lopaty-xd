@@ -8,6 +8,7 @@ document.querySelector('.add-article').addEventListener('submit', async (e) => {
         const responseJSON = await response.json()
         const keys = Object.keys(responseJSON)
         showAlert(responseJSON[keys[0]], keys, 0)
+        e.target.reset();
     } catch(e) {
         showAlert('Nastala chyba při ukládání článku', 'danger', 0)
     }
