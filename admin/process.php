@@ -85,11 +85,11 @@ include_once './php/components/header.php';
 
       <div class="process-detail-buttons text-center pb-3">
         <form class="approve-process" style="display: inline-block; margin-right: 10px;">
-          <button type="submit" class="btn-success btn" style="padding: 6px 12px;">Schválit</a>
+          <button type="submit" class="btn-success btn rounded-0" style="padding: 6px 12px;">Schválit</a>
         </form>
 
         <form class="reject-process">
-          <button type="submit" class="btn-danger btn" style="padding: 6px 12px;">Zamítnout</a>
+          <button type="submit" class="btn-danger btn rounded-0" style="padding: 6px 12px;">Zamítnout</a>
         </form>
       </div>
 

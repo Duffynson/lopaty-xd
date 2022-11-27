@@ -108,9 +108,10 @@ table tr {
    height: 25px;
 }
 
-.process-table .btn, my-processes-table .btn, unclaimed-processes-table .btn {
+.process-table .btn, .my-processes-table .btn, .unclaimed-processes-table .btn {
   padding: 3px 6px;
   font-size: 13px !important;
+  border-radius: 0;
 }
 
 .process-table td, .process-table th {
