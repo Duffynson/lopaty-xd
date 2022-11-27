@@ -12,8 +12,8 @@
       if(in_array($file_ext,$extensions)=== true) {
          move_uploaded_file($file_tmp,"../../clanky/".$file_name); //Uploadne soubor na server
          $date = date('Y-m-d');
-         mysqli_query($conn, "INSERT INTO Article (title, datum_vydani, soubor, ID_user) values('{$_POST['articleName']}', '{$date}', '{$file_name}', {$_SESSION['id_user']})"); //Udela novy zaznam do databaze
-         mysqli_query($conn, "INSERT INTO Rizeni (datum_vytvoreni) values('{$date}')");
+         mysqli_query($conn, "INSERT INTO Article (title, soubor, ID_user) values('{$_POST['articleName']}', '{$file_name}', {$_SESSION['id_user']})"); //Udela novy zaznam do databaze
+         mysqli_query($conn, "INSERT INTO Rizeni (datum_vytvoreni, ID_article) values('{$date}', $conn->insert_id)");
          mysqli_close($conn);
          exit(json_encode(array("success" => "Nahrání článku proběhlo úspěšně a bylo zahájeno řízení.")));
          //echo "Nahrání proběhlo úspěšně.";

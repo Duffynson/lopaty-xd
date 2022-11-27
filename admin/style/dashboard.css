@@ -108,6 +108,27 @@ table tr {
    height: 25px;
 }
 
+.btn {
+  padding: 3px 6px;
+  font-size: 13px !important;
+}
+
+.process-table td, .process-table th {
+  vertical-align: middle;
+}
+
+.process-table th, .process-table td {
+  border: none;
+}
+
+.process-table th[scope="row"] {
+  width: 180px;
+}
+
+.process-table tr {
+  border-bottom: 1px solid #727272;
+}
+
 @media screen and (max-width: 768px) {
   #sidebarMenu {
     top: 0px;
@@ -115,5 +136,11 @@ table tr {
 
   main {
     margin-inline: 20px !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .process-detail {
+    width: 100% !important;
   }
 }

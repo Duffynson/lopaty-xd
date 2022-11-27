@@ -48,7 +48,7 @@
             </li>";
             if(isset($_SESSION['id_user'])) echo "
             <li class='nav-item'>
-                <a class='nav-link' aria-current='page' href='./rizeni'>
+                <a class='nav-link' aria-current='page' href='./processes'>
                 <i class='fa-solid fa-list-check fa-fw'></i>
               Řízení
               </a>
