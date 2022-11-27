@@ -34,15 +34,18 @@ CREATE TABLE Journal(
 
 CREATE TABLE Rizeni(
     ID_rizeni INT NOT NULL AUTO_INCREMENT,
-    redaktor VARCHAR(100),
-    status VARCHAR(50),
-    datum_vytvoreni DATE,
+    ID_redaktor INT,
+    status VARCHAR(50) NOT NULL,
+    datum_vytvoreni DATE NOT NULL,
     datum_ukonceni DATE,
-    seznam_recenzi VARCHAR(255),
+    recenze1 INT,
+    recenze2 INT,
     komentar_sefredaktora TEXT,
-    PRIMARY KEY (ID_rizeni)
-    );
-    /*vytvoření tabulky pro recenze*/
+    PRIMARY KEY (ID_rizeni),
+    FOREIGN KEY (ID_redaktor) REFERENCES Users(ID_user),
+    FOREIGN KEY (recenze1) REFERENCES Recenze(ID_recenze),
+    FOREIGN KEY (recenze2) REFERENCES Recenze(ID_recenze)
+);
 
 CREATE TABLE Recenze(
     ID_recenze INT NOT NULL AUTO_INCREMENT,
