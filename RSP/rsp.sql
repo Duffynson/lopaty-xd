@@ -49,12 +49,11 @@ CREATE TABLE Recenze(
     originalita INT NOT NULL,
     aktualnost INT NOT NULL,
     jazyk INT NOT NULL,
+    odbornost INT NOT NULL,
     text TEXT,
     datum_recenze DATE,
     datum_vytvoreni DATE,
-    recenzent VARCHAR(100),
+    recenzent int NOT NULL,
     PRIMARY KEY(ID_recenze),
-    ID_rizeni INT NOT NULL,
-    FOREIGN KEY (ID_rizeni) REFERENCES Rizeni(ID_rizeni)
-
+    FOREIGN KEY (recenzent) REFERENCES Users(ID_user)
 );
