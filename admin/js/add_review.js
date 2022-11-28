@@ -10,7 +10,7 @@ document.querySelector('.add-review').addEventListener('submit', async (e) => {
         showAlert(responseJSON[keys[0]], keys, 0)
         e.target.reset();
     } catch(e) {
-        showAlert('Nastala chyba při ukládání recenze', 'danger', 0)
+        showAlert('Nastala chyba při ukládání recenze.', 'danger', 0)
     }
 
 })
