@@ -4,7 +4,7 @@ document.querySelector('.add-review').addEventListener('submit', async (e) => {
     hideAlert('danger')
 
     try {
-        const response = await fetch('./php/submit_review.php', {method: 'POST', body: new FormData(e.target)})
+        const response = await fetch(`./php/submit_review.php`, {method: 'POST', body: new FormData(e.target)})
         const responseJSON = await response.json()
         const keys = Object.keys(responseJSON)
         showAlert(responseJSON[keys[0]], keys, 0)
