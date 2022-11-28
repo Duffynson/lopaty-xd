@@ -16,15 +16,15 @@ document.querySelector('.add-review').addEventListener('submit', async (e) => {
 })
 
 const showAlert = (message, type, disposeTime) => {
-    const alert = document.querySelector('.alert-${type}');
+    const alert = document.querySelector(`.alert-${type}`);
     alert.innerHTML = message;
     alert.classList.remove('d-none');
     alert.classList.add('d-block');
-    if(disposeTime > 0) setTimeout(() => document.querySelector('.alert-${type}').style.display = 'none', disposeTime)
+    if(disposeTime > 0) setTimeout(() => document.querySelector(`.alert-${type}`).style.display = 'none', disposeTime)
     window.scrollTo({ top: 0, behavior: 'smooth' });
 } 
 
 const hideAlert = (type) => {
-    document.querySelector('.alert-${type}').classList.add('d-none');
-    document.querySelector('.alert-${type}').classList.remove('d-block');
+    document.querySelector(`.alert-${type}`).classList.add('d-none');
+    document.querySelector(`.alert-${type}`).classList.remove('d-block');
 }
