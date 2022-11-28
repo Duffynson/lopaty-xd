@@ -24,7 +24,7 @@ include_once './php/components/header.php';
       </h5>
     
       <div class="card-body px-lg-5 pt-0">    
-      <form method="POST" action="review.php" class="add-review md-form" style="color: #757575;">
+      <form method="POST" class="add-review md-form" style="color: #757575;">
         <div class="text-center">
          <label for="input">Aktuálnost, zajímavost, přínosnost</label>
          <fieldset id="aktualnost">
