@@ -99,6 +99,6 @@ include_once './php/components/header.php';
       </div>
 
     </main>
-    <script src="./js/process.js"></script>
+    <script type="module" src="./js/process.js"></script>
   </body>
 </html>

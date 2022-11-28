@@ -48,6 +48,6 @@ include_once './php/components/header.php';
 
     </main>
 
-    <script src="./js/processes.js"></script>
+    <script type="module" src="./js/processes.js"></script>
   </body>
 </html>
