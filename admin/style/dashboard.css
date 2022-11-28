@@ -118,16 +118,12 @@ table tr {
   vertical-align: middle;
 }
 
-.process-table th, .process-table td {
-  border: none;
-}
-
 .process-table th[scope="row"] {
   width: 180px;
 }
 
-.process-table tr {
-  border-bottom: 1px solid #727272;
+.process-table tr, .article-table tr {
+  border-bottom: 1px solid #b1b1b1;
 }
 
 @media screen and (max-width: 768px) {

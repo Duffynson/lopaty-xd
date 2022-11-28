@@ -12,33 +12,21 @@ const state = {
     'REJECTED': 'Článek byl zamítnut'
 }
 
-const renderMyProcesses = async () => {
+const elements = [document.querySelector('.process-table'), document.querySelector('.article-table'), document.querySelector('.process-detail-buttons')];
+
+const renderProcess = async () => {
     try {
-        const response = await fetch('./php/request_process.php', {method: 'GET'});
+        const response = await fetch(`./php/request_process?id=${new URLSearchParams(window.location.search).get('id')}`, {method: 'GET'});
         const processData = await response.json();
         if(processData.length === 0) throw new Exception('No data found'); 
-        const tbody = document.createElement('tbody');
-        processData.forEach(process => {
-            const el = document.createElement('tr');
-            console.log(process);
-            el.innerHTML = `
-                <td scope="col" class="px-3 text-start">${process.ID_rizeni}</td>
-                <td scope="col" class="">${process.title}</td>
-                <td scope="col" class="">${state[process.status]}</td>
-                <td scope="col" class="">${process.datum_vytvoreni}</td>
-                <td scope="col" class=""><a href="./process?id=${process.ID_rizeni}" class="btn-primary btn">Detail řízení</a> </td>
-            `; 
-            tbody.appendChild(el);
-        })
-        my_processes.firstElementChild.classList.remove('d-none');
-        my_processes.appendChild(tbody);
+        console.log(processData);
+        //Object.values(document.querySelector('.article-table').firstElementChild.children).forEach(e => console.log(e))
     } catch(e) {
         console.log(e);
-        document.querySelector('.my-processes-table').remove()
+        elements.forEach(e => e.remove())
         document.querySelector('.alert-danger').classList.remove('d-none');
         document.querySelector('.alert-danger').textContent = 'Nastala chyba při načítání dat'
     }
 }
 
-renderMyProcesses()
-renderUnclaimedProcesses()
+renderProcess()

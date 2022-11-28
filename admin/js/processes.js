@@ -30,6 +30,7 @@ const renderMyProcesses = async () => {
             `; 
             tbody.appendChild(el);
         })
+        document.querySelector('.my_processes_header').classList.remove('d-none');
         my_processes.firstElementChild.classList.remove('d-none');
         my_processes.appendChild(tbody);
     } catch(e) {
@@ -58,6 +59,7 @@ const renderUnclaimedProcesses = async () => {
             `; 
             tbody.appendChild(el);
         })
+        document.querySelector('.unclaimed_processes_header').classList.remove('d-none');
         unclaimed_processes.firstElementChild.classList.remove('d-none');
         unclaimed_processes.appendChild(tbody);
     } catch(e) {

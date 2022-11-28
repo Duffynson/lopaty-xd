@@ -13,9 +13,12 @@ include_once './php/components/header.php';
         <h1 class="h2">Řízení článku</h1>
       </div>
 
+      <div class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+      </div>
+
       <div class="process-detail fs-6 w-50 mx-auto">
 
-      <table class="table process-table w-100">
+      <table class="table article-table w-100 table-xl">
         <tbody>
           <tr>
             <th scope="row">ID článku:</th>
@@ -43,7 +46,7 @@ include_once './php/components/header.php';
         </tbody>
       </table>
 
-      <table class="table process-table w-100">
+      <table class="table process-table w-100 table-xl">
         <tbody>
           <tr>
             <th scope="row">ID řízení:</th>
