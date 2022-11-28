@@ -8,7 +8,7 @@ require_once '../../php/db.php';
       $comment = $_POST["textComment"];
       $date = date('Y-m-d');
       if (!(empty($aktualnost) || empty($originalita) || empty($odbornost) || empty($jazyk) || empty($comment))){
-        mysqli_query($conn, "UPDATE Recenze SET aktualnost = {$aktualnost}, originalita = {$originalita}, jazyk = {$jazyk}, odbornost = {$odbornost}, comment = {$comment}, datum_recenze = {$date} WHERE ID_recenze = {$_GET["id"]}");
+        mysqli_query($conn, "UPDATE Recenze SET aktualnost = '$aktualnost', originalita = '$originalita', jazyk = '$jazyk', odbornost = '$odbornost', comment = '$comment', datum_recenze = '$date' WHERE ID_recenze = '$_GET["id"]'");
         mysqli_close($conn);
         exit(json_encode(array("success" => "Nahrání recenze proběhlo úspěšně.")));
       }
