@@ -11,7 +11,6 @@ const renderMyProcesses = async () => {
         const tbody = document.createElement('tbody');
         processData.forEach(process => {
             const el = document.createElement('tr');
-            console.log(process);
             el.innerHTML = `
                 <td scope="col" class="px-3 text-start">${process.ID_rizeni}</td>
                 <td scope="col" class="">${process.title}</td>
@@ -25,7 +24,6 @@ const renderMyProcesses = async () => {
         my_processes.firstElementChild.classList.remove('d-none');
         my_processes.appendChild(tbody);
     } catch(e) {
-        console.log(e);
         document.querySelector('.my-processes-table').remove()
         document.querySelector('.alert-danger').classList.remove('d-none');
         document.querySelector('.alert-danger').textContent = 'Nastala chyba při načítání dat'

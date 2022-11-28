@@ -22,15 +22,15 @@ include_once './php/components/header.php';
         <tbody>
           <tr>
             <th scope="row">ID článku:</th>
-            <td class="ID_article" colspan="2" >1</td>
+            <td class="ID_article" colspan="2" ></td>
           </tr>
           <tr>
             <th scope="row">Autor článku:</th>
-            <td class="ID_user" colspan="2" >Jožo Kokotos</td>
+            <td class="ID_user" colspan="2" ><span class="autor_firstname"></span> <span class="autor_lastname"></span></td>
           </tr>
           <tr>
             <th scope="row">Název článku</th>
-            <td class="title" colspan="2" >Ja nevjem uš</td>
+            <td class="title" colspan="2" class="title"></td>
           </tr>
           <tr>
             <th scope="row">Datum vydání</th>
@@ -50,32 +50,32 @@ include_once './php/components/header.php';
         <tbody>
           <tr>
             <th scope="row">ID řízení:</th>
-            <td colspan="2" class="ID_rizeni">1</td>
+            <td colspan="2" class="ID_rizeni"></td>
           </tr>
           <tr>
             <th scope="row">Redaktor:</th>
-            <td colspan="2" class="">Jožo Kokotos</td>
+            <td colspan="2" class=""><span class="editor_firstname"></span> <span class="editor_lastname"></span></td>
           </tr>
           <tr>
             <th scope="row">Status</th>
-            <td colspan="2" >Ja nevjem uš</td>
+            <td colspan="2" class="status"></td>
           </tr>
           <tr>
             <th scope="row">Datum vytvoření</th>
-            <td colspan="2" >2022-11-27</td>
+            <td colspan="2" class="datum_vytvoreni"></td>
             <td>
           </tr>
           <tr>
             <th scope="row">Datum ukončení</th>
-            <td colspan="2" >2022-11-27</td>
+            <td colspan="2" class="datum_ukonceni"></td>
           </tr>
           <tr>
             <th scope="row" rowspan="2">Recenze</th>
-            <td class="text-danger">Ferko recenzent1</td>
-            <td></td>
+            <td class="text-danger"><span class="rizeni1_firstname"></span> <span class="rizeni1_lastname"></span></td>
+            <td><a href="./review?id=1" class="btn btn-primary fs-6">Zobrazit</a></td>
           </tr>
           <tr>
-            <td class="text-success">Ferko recenzent2</td>
+            <td class="text-success"><span class="rizeni2_firstname"></span> <span class="rizeni2_lastname"></span></td>
             <td><a href="./review?id=1" class="btn btn-primary fs-6">Zobrazit</a></td>
           </tr>
           <tr>

@@ -114,7 +114,7 @@ table tr {
   border-radius: 0;
 }
 
-.process-table td, .process-table th {
+.process-table td, .process-table th, .article-table td, .article-table th {
   vertical-align: middle;
 }
 
