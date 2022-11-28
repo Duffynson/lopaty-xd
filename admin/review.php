@@ -25,6 +25,7 @@ include_once './php/components/header.php';
     
       <div class="card-body px-lg-5 pt-0">    
       <form method="POST" class="add-review md-form" style="color: #757575;">
+        <input type="hidden" id="id_review_hidden" name="id_review" value="<?php echo $_GET['id'] ?>">
         <div class="text-center">
          <label for="input">Aktuálnost, zajímavost, přínosnost</label>
          <fieldset id="aktualnost">
