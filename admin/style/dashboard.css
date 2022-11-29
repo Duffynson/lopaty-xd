@@ -98,10 +98,6 @@ body {
   border-radius: 0;
 }
 
-.process-detail th[scope="row"] {
-  width: 40%;
-}
-
 table tr {
   line-height: 25px;
    min-height: 25px;
@@ -118,8 +114,8 @@ table tr {
   vertical-align: middle;
 }
 
-.process-table th[scope=row] {
-  width: 180px;
+.process-detail th[scope=row] {
+  width: 40%;
 }
 
 .process-table tr, .article-table tr {
