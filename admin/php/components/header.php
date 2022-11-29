@@ -23,6 +23,7 @@
   </header>
 
   <div class="container-fluid">
+    <div class="d-none id_user_hidden"><?php if(isset($_SESSION['id_user'])) echo $_SESSION['id_user']?></div>
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky sidebar-sticky">
@@ -37,13 +38,6 @@
                 <a class='nav-link' aria-current='page' href='./clanek'>
                 <i class='fa-solid fa-plus fa-fw'></i>
               Přidat článek
-              </a>
-            </li>";
-            if(isset($_SESSION['id_user'])) echo "
-            <li class='nav-item'>
-                <a class='nav-link' aria-current='page' href='./clanky'>
-                <i class='fa-solid fa-users fa-fw'></i>
-                Články
               </a>
             </li>";
             if(isset($_SESSION['id_user'])) echo "

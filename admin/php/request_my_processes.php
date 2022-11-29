@@ -8,14 +8,13 @@ require_once '../../php/db.php';
     http_response_code(403);
     exit();
 }*/
+$stmt = $conn->prepare("SELECT Rizeni.ID_rizeni, Rizeni.datum_vytvoreni, Rizeni.status, Article.title FROM Rizeni JOIN Article ON Rizeni.ID_article = Article.ID_article WHERE ID_redaktor = {$_SESSION['id_user']} OR recenzent1 = {$_SESSION['id_user']} OR recenzent2 = {$_SESSION['id_user']} OR Article.ID_user = {$_SESSION['id_user']} ORDER BY ID_rizeni DESC");
 
-if($stmt = $conn->prepare("SELECT Rizeni.ID_rizeni, Rizeni.datum_vytvoreni, Rizeni.status, Article.title FROM Rizeni JOIN Article ON Rizeni.ID_article = Article.ID_article WHERE ID_redaktor = {$_SESSION['id_user']} ORDER BY datum_vytvoreni DESC")) {
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $data = $result->fetch_all(MYSQLI_ASSOC);
-    $stmt->close();
-    exit(json_encode($data));
-}
+$stmt->execute();
+$result = $stmt->get_result();
+$data = $result->fetch_all(MYSQLI_ASSOC);
+$stmt->close();
+exit(json_encode($data));
 
 http_response_code(500);
 ?>

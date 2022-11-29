@@ -36,15 +36,13 @@ include_once './php/components/header.php';
             <th scope="row">Datum vydání</th>
             <td colspan="2" class="datum_vydani"></td>
           </tr>
-          <div class="soubor">
             <tr>
               <th scope="row" rowspan="2">Soubory</th>
-              <td class="files" class="soubor">Soubor1</td>
+              <td><a href="" class="soubor"></a></td>
             </tr>
             <tr>
-              <td>Soubor2</td>
+              <td><a href="" class="soubor2"></a></td>
             </tr>
-          </div>
         </tbody>
       </table>
 
@@ -73,17 +71,30 @@ include_once './php/components/header.php';
           </tr>
           <tr>
             <th scope="row" rowspan="2">Recenze</th>
-            <td class="text-danger"><span class="rizeni1_firstname"></span> <span class="rizeni1_lastname"></span></td>
-            <td><a href="./review?id=1" class="btn btn-primary fs-6">Zobrazit</a></td>
+            <td class=""><span class="rizeni1_firstname">
+              <form method="POST" class="form_rizeni1 d-none">
+                <select name="recenzent1" id="rizeni1_firstname_select"></select>
+                <input type="hidden" value="<?php echo $_GET['id']; ?>" name="id">
+                <input type="submit" value="Vybrat">
+              </form>
+            </span> <span class="rizeni1_lastname"></span>
+              </td>
+            <td><a href="" class="btn btn-primary fs-6 show_rizeni1 d-none">Zobrazit</a></td>
           </tr>
           <tr>
-            <td class="text-success"><span class="rizeni2_firstname"></span> <span class="rizeni2_lastname"></span></td>
-            <td><a href="./review?id=1" class="btn btn-primary fs-6">Zobrazit</a></td>
+            <td class=""><span class="rizeni2_firstname">
+            <form method="POST" class="form_rizeni2 d-none">
+                <select name="recenzent2" id="rizeni2_firstname_select"></select>
+                <input type="hidden" value="<?php echo $_GET['id']; ?>" name="id">
+                <input type="submit" value="Vybrat">
+              </form>
+            </span> <span class="rizeni2_lastname"></span></td>
+            <td><a href="" class="btn btn-primary fs-6 show_rizeni2 d-none">Zobrazit</a></td>
           </tr>
           <tr>
             <th scope="row">Komentář</th>
             <td></td>
-            <td><a href="#" class="btn btn-primary fs-6">Zobrazit</a></td>
+            <td><!--<a href="#" class="btn btn-primary fs-6">Zobrazit</a> --></td>
           </tr>
         </tbody>
       </table>

@@ -7,9 +7,12 @@ require_once '../../php/db.php';
     //header("Location: ../auth-error");
     http_response_code(403);
     exit();
-}*/
+} */
 
-if($stmt = $conn->prepare("SELECT Rizeni.ID_rizeni, Rizeni.datum_vytvoreni, Rizeni.status, Article.title FROM Rizeni JOIN Article ON Rizeni.ID_article = Article.ID_article WHERE ID_redaktor IS NULL ORDER BY ID_rizeni ASC")) {
+if(!isset($_GET['id'])) exit(http_response_code(500));
+
+
+if($stmt = $conn->prepare("SELECT firstname, lastname, ID_user FROM Users WHERE role = 1")) {
     $stmt->execute();
     $result = $stmt->get_result();
     $data = $result->fetch_all(MYSQLI_ASSOC);
@@ -17,5 +20,5 @@ if($stmt = $conn->prepare("SELECT Rizeni.ID_rizeni, Rizeni.datum_vytvoreni, Rize
     exit(json_encode($data));
 }
 
-http_response_code(500);
+exit(http_response_code(500));
 ?>
