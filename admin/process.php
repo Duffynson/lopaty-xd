@@ -36,17 +36,19 @@ include_once './php/components/header.php';
             <th scope="row">Datum vydání</th>
             <td colspan="2" class="datum_vydani"></td>
           </tr>
-          <tr>
-            <th scope="row" rowspan="2">Soubory</th>
-            <td class="files" class="soubor">Soubor1</td>
-          </tr>
-          <tr>
-            <td>Soubor2</td>
-          </tr>
+          <div class="soubor">
+            <tr>
+              <th scope="row" rowspan="2">Soubory</th>
+              <td class="files" class="soubor">Soubor1</td>
+            </tr>
+            <tr>
+              <td>Soubor2</td>
+            </tr>
+          </div>
         </tbody>
       </table>
 
-      <table class="table process-table w-100 table-xl">
+      <table class="table process-table w-100 table-xl mt-5">
         <tbody>
           <tr>
             <th scope="row">ID řízení:</th>
