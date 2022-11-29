@@ -51,6 +51,8 @@ const loadReview = async () => {
             document.querySelector('.comment').disabled = true;
             document.querySelector('.comment').value = data['comment']
             document.querySelector('.submit_review').remove();
+        } else {
+            document.querySelector('.submit_review').classList.remove('d-none');
         }
         document.querySelector('.ID_rizeni').value = data['ID_rizeni']
     } catch {}

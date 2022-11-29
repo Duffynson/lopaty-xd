@@ -133,7 +133,7 @@ include_once './php/components/header.php';
         <textarea name="textComment" class="rounded-0 form-control comment"></textarea>
       </div>
       <div class="file-path-wrapper m-2 p-2 text-center">
-          <input class="file-path validate btn btn-success rounded-0 submit_review" type="submit" name="submit" value="Přidat recenzi">
+          <input class="file-path validate btn btn-success rounded-0 submit_review d-none" type="submit" name="submit" value="Přidat recenzi">
       </div>
       </div>
       </form>
