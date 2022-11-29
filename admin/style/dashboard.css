@@ -98,8 +98,8 @@ body {
   border-radius: 0;
 }
 
-option {
-  border-radius: 0;
+.process-detail th[scope="row"] {
+  width: 40%;
 }
 
 table tr {
