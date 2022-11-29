@@ -118,7 +118,7 @@ table tr {
   vertical-align: middle;
 }
 
-.process-table th[scope="row"] {
+.process-table th[scope=row] {
   width: 180px;
 }
 
