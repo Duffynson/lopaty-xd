@@ -2,7 +2,6 @@
 session_start();
 require_once '../../php/db.php';
 
-//TODO: Auth check
 if(!isset($_SESSION['id_user'])) {
     //header("Location: ../auth-error");
     http_response_code(403);

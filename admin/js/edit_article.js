@@ -6,8 +6,8 @@ const load = async () => {
         if(responseJSON[0]['ID_user'] != document.querySelector('.id_user_hidden').textContent) location.href = './auth-error'
         if(responseJSON[0]['soubor2'] != null) location.href = './';
     } catch(e) {
-        //TODO: error 
-        console.log(e);
+        document.querySelector('.container').remove();
+        showAlert('Při načítání článku nastala chyba.', 'danger', 0);
     }
 }
 

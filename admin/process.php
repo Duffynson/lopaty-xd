@@ -80,7 +80,7 @@ include_once './php/components/header.php';
               <form method="POST" class="form_rizeni1 d-none">
                 <select name="recenzent1" id="rizeni1_firstname_select"></select>
                 <input type="hidden" value="<?php echo $_GET['id']; ?>" name="id">
-                <input type="submit" value="Vybrat">
+                <input type="submit" value="Vybrat" class="btn btn-primary" style="position: relative; top: -3px;">
               </form>
             </span> <span class="rizeni1_lastname"></span>
               </td>
@@ -91,7 +91,7 @@ include_once './php/components/header.php';
             <form method="POST" class="form_rizeni2 d-none">
                 <select name="recenzent2" id="rizeni2_firstname_select"></select>
                 <input type="hidden" value="<?php echo $_GET['id']; ?>" name="id">
-                <input type="submit" value="Vybrat">
+                <input type="submit" value="Vybrat" class="btn btn-primary" style="position: relative; top: -3px;">
               </form>
             </span> <span class="rizeni2_lastname"></span></td>
             <td><a href="" class="btn btn-primary fs-6 show_rizeni2 d-none">Zobrazit</a></td>

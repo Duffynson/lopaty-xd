@@ -2,14 +2,20 @@
 session_start();
 require_once '../../php/db.php';
 
-//TODO: Auth check
-if(!isset($_SESSION['id_user'])) {
+/*if(!isset($_SESSION['id_user'])) {
     //header("Location: ../auth-error");
     http_response_code(403);
     exit();
-}
+}*/
 
 if(!isset($_GET['id'])) exit(http_response_code(500));
+
+$res = mysqli_query($conn, "SELECT status FROM Rizeni JOIN Article ON Rizeni.ID_article = Article.ID_article WHERE Rizeni.ID_Article = {$_GET['id']}");
+$res = mysqli_fetch_assoc($res);
+if($res['status'] != 'AUTHOR_REQUIRED') {
+    header("Location: ../auth-error");
+    exit();
+}
 
 if($stmt = $conn->prepare("SELECT soubor2, ID_user FROM Article WHERE ID_article = {$_GET['id']}")) {
     $stmt->execute();
