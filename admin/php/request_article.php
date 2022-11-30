@@ -2,11 +2,11 @@
 session_start();
 require_once '../../php/db.php';
 
-/*if(!isset($_SESSION['id_user'])) {
+if(!isset($_SESSION['id_user'])) {
     //header("Location: ../auth-error");
     http_response_code(403);
     exit();
-}*/
+}
 
 if(!isset($_GET['id'])) exit(http_response_code(500));
 
