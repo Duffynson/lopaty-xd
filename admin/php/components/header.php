@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+  <?php include_once 'db.php'; ?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="./style/dashboard.css" rel="stylesheet">
 </head>
-
+<?php
+    $sql_get= mysqli_query($conn, "SELECT * FROM notifications WHERE status = '0'");
+    $count = mysqli_num_rows($sql_get);
+    ?>
 <body>
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="./">Los Lopatos</a>
@@ -19,9 +23,34 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-nav">
+    <button class="btn btn-secondary dropdown-toggle bg-dark border border-dark " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fa-regular fa-bell fa-2xl"></i> <span class="badge bg-danger" id="count"><?php echo $count; ?></span>
+  </button>
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item dropdown">
+    <ul class="dropdown-menu">
+    <?php
+      $sql_get1 = mysqli_query($conn, "SELECT * FROM notifications WHERE status = 0"); 
+      if(mysqli_num_rows($sql_get1)>0)
+      {
+        while($row = mysqli_fetch_assoc($sql_get1))
+        {
+          $id = $row['id'];
+          $subjekt = $row['subjekt'];
+          $comment = $row['comment'];
+          $status = $row['status'];
+          $created_at = $row['created_at'];
+          $ID_user = $row['ID_user'];
+          echo '<a class="dropdown-item" target="_blank" href="read_msg.php?id='.$row['id'].'" >'.$row['subjekt'].'</a>';
+        }
+      }
+      else
+      {
+        echo '<li class="dropdown-item">Žádné nové notifikace</li>';
+      }
+    ?>
     </div>
   </header>
-
   <div class="container-fluid">
     <div class="d-none id_user_hidden"><?php if(isset($_SESSION['id_user'])) echo $_SESSION['id_user']?></div>
     <div class="d-none role_hidden"><?php if(isset($_SESSION['role'])) echo $_SESSION['role']?></div>
