@@ -12,6 +12,10 @@ body {
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
 
+.article-wrap {
+  width: 50% !important;
+}
+
 @media (max-width: 767.98px) {
   .sidebar {
     top: 5rem;
@@ -127,6 +131,10 @@ table tr {
     top: 0px;
   }
 
+  .article-wrap {
+    width: 100% !important;
+  }
+
   main {
     margin-inline: 20px !important;
   }
@@ -134,6 +142,10 @@ table tr {
 
 @media screen and (max-width: 1200px) {
   .process-detail {
+    width: 100% !important;
+  }
+
+  .card {
     width: 100% !important;
   }
 }
