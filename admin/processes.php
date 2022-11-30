@@ -16,7 +16,7 @@ include_once './php/components/header.php';
       <div class="alert alert-danger alert-dismissible fade show d-none" role="alert">
       </div>
 
-        <h3 class="h3 my_processes_header d-none">Moje řízení</h3>
+      <h3 class="h3 my_processes_header d-none">Moje řízení</h3>
       <div class="table-responsive">
         <table class="my-processes-table table table-striped table-sm text-center">
           <thead class="d-none">

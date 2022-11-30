@@ -3,11 +3,11 @@ session_start();
 require_once '../../php/db.php';
 
 //TODO: Auth check
-/*if(!isset($_SESSION['id_user']) || $_SESSION['role'] != 4) {
+if(!isset($_SESSION['id_user']) || $_SESSION['role'] < 1) {
     //header("Location: ../auth-error");
     http_response_code(403);
     exit();
-} */
+} 
 
 if(!isset($_GET['id'])) exit(http_response_code(500));
 

@@ -3,11 +3,11 @@ session_start();
 require_once '../../php/db.php';
 
 //TODO: Auth check
-/*if(!isset($_SESSION['id_user']) || $_SESSION['role'] != 4) {
+if(!isset($_SESSION['id_user']) || $_SESSION['role'] < 1) {
     //header("Location: ../auth-error");
     http_response_code(403);
     exit();
-}*/
+}
 
 if($stmt = $conn->prepare("SELECT Rizeni.ID_rizeni, Rizeni.datum_vytvoreni, Rizeni.status, Article.title FROM Rizeni JOIN Article ON Rizeni.ID_article = Article.ID_article WHERE ID_redaktor IS NULL ORDER BY ID_rizeni ASC")) {
     $stmt->execute();

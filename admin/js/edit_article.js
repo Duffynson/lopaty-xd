@@ -1,25 +1,33 @@
-document.querySelector('.add-article').addEventListener('submit', async (e) => {
+const load = async () => {
+    try {
+        const response = await fetch(`./php/request_article?id=${new URLSearchParams(window.location.search).get('id')}`, {method: 'POST',})
+        const responseJSON = await response.json()
+        if(responseJSON[0]['ID_user'] == null) throw new Error('No data found');
+        if(responseJSON[0]['ID_user'] != document.querySelector('.id_user_hidden').textContent) location.href = './auth-error'
+        if(responseJSON[0]['soubor2'] != null) location.href = './';
+    } catch(e) {
+        //TODO: error 
+        console.log(e);
+    }
+}
+
+load();
+
+document.querySelector('.edit-article').addEventListener('submit', async e => {
     e.preventDefault()
     hideAlert('success')
     hideAlert('danger')
     try {
-        const response = await fetch(`./php/submit_article.php`, {method: 'POST', body: new FormData(e.target)})
+        const response = await fetch('./php/edit_article', {method: 'POST', body: new FormData(e.target)})
         const responseJSON = await response.json()
         const keys = Object.keys(responseJSON)
         showAlert(responseJSON[keys[0]], keys, 0)
         e.target.reset();
-        setTimeout(() => location.href = './processes', 2000);
+        setTimeout(() => location.href = `./process?id=${responseJSON[keys[1]]}`, 2000)
     } catch(e) {
         showAlert('Nastala chyba při ukládání článku.', 'danger', 0)
     }
-})
-
-
-const load = () => {
-    if(document.querySelector('.role_hidden').textContent != 0 && document.querySelector('.role_hidden').textContent != 4) location.href = './auth-error'
-}
-
-load();
+}) 
 
 const showAlert = (message, type, disposeTime) => {
     const alert = document.querySelector(`.alert-${type}`);

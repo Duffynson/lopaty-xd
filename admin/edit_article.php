@@ -10,7 +10,7 @@ include_once './php/components/header.php';
 ?>
 
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Přidání článku</h1>
+        <h1 class="h2">Aktualizace článku</h1>
       </div>
       <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
       </div>
@@ -24,15 +24,14 @@ include_once './php/components/header.php';
       </h5>
     
       <div class="card-body px-lg-5 pt-0">    
-      <form method="POST" class="add-article md-form" style="color: #757575;">
-         <label for="input">Název článku</label>
-         <input type="text" name="articleName" class="form-control rounded-0" placeholder="" required>
+      <form method="POST" class="edit-article md-form" style="color: #757575;">
+      <input type="hidden" name="article_id" value=<?php echo $_GET['id'] ?>>
       <div class="file-field">
       <div class="float-left p-3">
          <input type="file" name="soubor" class="rounded-0 form-control">
       </div>
       <div class="file-path-wrapper m-2 p-2 text-center">
-          <input class="file-path validate btn btn-success rounded-0" type="submit" value="Nahrát článek">
+          <input class="file-path validate btn btn-primary rounded-0" type="submit" value="Nahrát soubor">
       </div>
       </div>
       </div>
@@ -41,6 +40,6 @@ include_once './php/components/header.php';
       </div>
 </main>
 
-    <script src="./js/add_article.js"></script>
+    <script src="./js/edit_article.js"></script>
   </body>
 </html>

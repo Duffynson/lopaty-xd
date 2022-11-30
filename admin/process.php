@@ -41,7 +41,12 @@ include_once './php/components/header.php';
               <td><a href="" class="soubor"></a></td>
             </tr>
             <tr>
-              <td><a href="" class="soubor2"></a></td>
+              <td>
+                <a href="" class="soubor2"></a>
+                <form class="allow_upload_button d-none">
+                  <button type="submit" class="btn-primary btn rounded-0" style="padding: 6px 12px; margin-right: 10px;">Předat zpět autorovi</a>
+                </form>
+              </td>
             </tr>
         </tbody>
       </table>
@@ -101,11 +106,11 @@ include_once './php/components/header.php';
 
       <div class="process-detail-buttons text-center pb-3">
         <form class="approve-process" style="display: inline-block; margin-right: 10px;">
-          <button type="submit" class="btn-success btn rounded-0" style="padding: 6px 12px;">Schválit</a>
+          <button type="submit" class="btn-success btn rounded-0" style="padding: 6px 12px;" disabled>Schválit</a>
         </form>
 
         <form class="reject-process">
-          <button type="submit" class="btn-danger btn rounded-0" style="padding: 6px 12px;">Zamítnout</a>
+          <button type="submit" class="btn-danger btn rounded-0" style="padding: 6px 12px;" disabled>Zamítnout</a>
         </form>
       </div>
 

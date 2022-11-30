@@ -11,7 +11,6 @@ document.querySelector('.add-review').addEventListener('submit', async (e) => {
         e.target.reset();
         setTimeout(() => location.href = `./process?id=${document.querySelector('.ID_rizeni').value}`, 2000)
     } catch(e) {
-        console.log(e)
         showAlert('Nastala chyba při ukládání recenze.', 'danger', 0)
     }
 })
@@ -42,6 +41,10 @@ const loadReview = async () => {
         const response = await fetch(`./php/request_review.php?id=${new URLSearchParams(window.location.search).get('id')}`, {method: 'GET'});
         const responseJSON = await response.json();
         const data = responseJSON[0];
+        const role = document.querySelector('.role_hidden').textContent;
+        const id = document.querySelector('.id_user_hidden').textContent;
+
+        if(role < 3 && (id != data['recenzent'] && id != data['ID_autor'] && id != data['ID_redaktor'] )) location.href = './auth-error'
         document.querySelectorAll('.aktualnost').forEach(e => disableElements('aktualnost', data, e))
 
         document.querySelectorAll('.originalita').forEach(e => disableElements('originalita', data, e))

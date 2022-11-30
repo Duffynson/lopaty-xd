@@ -24,6 +24,7 @@
 
   <div class="container-fluid">
     <div class="d-none id_user_hidden"><?php if(isset($_SESSION['id_user'])) echo $_SESSION['id_user']?></div>
+    <div class="d-none role_hidden"><?php if(isset($_SESSION['role'])) echo $_SESSION['role']?></div>
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky sidebar-sticky">
@@ -33,9 +34,9 @@
         </h6> "; ?>
           <ul class="nav flex-column">
           <?php 
-            if(isset($_SESSION['id_user'])) echo "
+            if(isset($_SESSION['id_user']) && $_SESSION['role'] == 0) echo "
             <li class='nav-item'>
-                <a class='nav-link' aria-current='page' href='./clanek'>
+                <a class='nav-link' aria-current='page' href='./article'>
                 <i class='fa-solid fa-plus fa-fw'></i>
               Přidat článek
               </a>
@@ -46,14 +47,7 @@
                 <i class='fa-solid fa-list-check fa-fw'></i>
               Řízení
               </a>
-            </li>";
-            if(isset($_SESSION['id_user'])) echo "
-            <li class='nav-item'>
-              <a class='nav-link' aria-current='page' href='./recenze'>
-                <i class='fa-solid fa-file fa-fw'></i>
-                Recenze
-              </a>
-            </li>"; ?>
+            </li>";?>
           </ul> 
 
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">

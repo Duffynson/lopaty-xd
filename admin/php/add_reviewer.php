@@ -1,6 +1,9 @@
 <?php
 require_once '../../php/db.php';
 
+if(!isset($_SESSION['id_user']) || $_SESSION['role'] != 2 || $_SESSION['role'] != 4) http_response_code(403);
+
+
 $joj = '';
 $recenze = '';
 if(isset($_POST["recenzent1"])) {
