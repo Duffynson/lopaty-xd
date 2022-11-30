@@ -21,8 +21,6 @@ if (!(empty($aktualnost) || empty($originalita) || empty($odbornost) || empty($j
   $result2 = mysqli_query($conn, "SELECT datum_recenze FROM Recenze WHERE ID_recenze = {$res['recenze2']}");
   $data = mysqli_fetch_assoc($result);
   $data2 = mysqli_fetch_assoc($result2);
-  echo json_encode($data);
-  echo json_encode($data2);
   if($data['datum_recenze'] != NULL && $data2['datum_recenze'] != NULL) mysqli_query($conn, "UPDATE Rizeni SET status = 'REVIEWS_SUBMITTED' WHERE ID_rizeni = {$_POST['ID_rizeni']}");
   
   mysqli_close($conn);
