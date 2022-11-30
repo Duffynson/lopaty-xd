@@ -8,6 +8,11 @@ const renderMyProcesses = async () => {
     try {
         const response = await fetch('./php/request_my_processes.php', {method: 'GET'});
         processData = await response.json();
+        if(processData.length === 0) {
+            document.querySelector('.my_processes_header').remove();
+            document.querySelector('.my-processes-table').remove();
+            return;
+        }
         const tbody = document.createElement('tbody');
         processData.forEach(process => {
             const el = document.createElement('tr');
@@ -39,6 +44,11 @@ const renderUnclaimedProcesses = async () => {
     try {
         const response = await fetch('./php/request_unclaimed_processes.php', {method: 'GET'});
         const processData = await response.json();
+        if(processData.length === 0) {
+            document.querySelector('.unclaimed-processes-table').remove();
+            document.querySelector('.unclaimed_processes_header').remove();
+            return;
+        }
         const tbody = document.createElement('tbody');
         processData.forEach(process => {
             const el = document.createElement('tr');
