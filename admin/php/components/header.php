@@ -23,32 +23,6 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-nav">
-    <button class="btn btn-secondary dropdown-toggle bg-dark border border-dark " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-  <i class="fa-regular fa-bell fa-2xl"></i> <span class="badge bg-danger" id="count"><?php echo $count; ?></span>
-  </button>
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    <li class="nav-item dropdown">
-    <ul class="dropdown-menu">
-    <?php
-      $sql_get1 = mysqli_query($conn, "SELECT * FROM notifications WHERE status = 0"); 
-      if(mysqli_num_rows($sql_get1)>0)
-      {
-        while($row = mysqli_fetch_assoc($sql_get1))
-        {
-          $id = $row['id'];
-          $subjekt = $row['subjekt'];
-          $comment = $row['comment'];
-          $status = $row['status'];
-          $created_at = $row['created_at'];
-          $ID_user = $row['ID_user'];
-          echo '<a class="dropdown-item" target="_blank" href="read_msg.php?id='.$row['id'].'" >'.$row['subjekt'].'</a>';
-        }
-      }
-      else
-      {
-        echo '<li class="dropdown-item">Žádné nové notifikace</li>';
-      }
-    ?>
     </div>
   </header>
   <div class="container-fluid">
