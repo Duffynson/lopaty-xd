@@ -25,7 +25,7 @@ include_once './php/components/header.php';
                 <th scope="col">Lastname</th>
                 <th scope="col">Email</th>
                 <th scope="col" class="role">Role</th>
-                <th scope="col" class="actions">Actions</th>
+                <th scope="col" class="actions">Akce</th>
             </tr>
           </thead>
         </table>

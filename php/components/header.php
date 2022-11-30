@@ -36,7 +36,7 @@
               if(!isset($_SESSION['id_user']))
                 if($_SERVER['SCRIPT_NAME'] == '/login.php') echo "<a class='nav-link active' href='./login'>Přihlášení</a>";
                 else echo "<a class='nav-link' href='./login'>Přihlášení</a>";
-              else echo "<a class='nav-link' class='name' href='./admin/user?id={$_SESSION['id_user']}'>{$_SESSION['firstname']} {$_SESSION['lastname']}</a>"; ?>
+              else echo "<a class='nav-link' class='name' href='./admin/user?id={$_SESSION['id_user']}'>[{$_SESSION['firstname']} {$_SESSION['lastname']}]</a>"; ?>
           </li>
           <li class='nav-item'>
             <?php
