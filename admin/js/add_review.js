@@ -44,7 +44,7 @@ const loadReview = async () => {
         const role = document.querySelector('.role_hidden').textContent;
         const id = document.querySelector('.id_user_hidden').textContent;
 
-        if(role < 3 && (id != data['recenzent'] && id != data['ID_autor'] && id != data['ID_redaktor'] && id != data['recenzent2'] )) location.href = './auth-error'
+        if(role < 3 && (id != data['recenzent'] && id != data['ID_autor'] && id != data['ID_redaktor'] && id != data['recenzent2'] && id != data['recenzent1'])) location.href = './auth-error'
         document.querySelectorAll('.aktualnost').forEach(e => disableElements('aktualnost', data, e))
 
         document.querySelectorAll('.originalita').forEach(e => disableElements('originalita', data, e))
