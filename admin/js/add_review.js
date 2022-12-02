@@ -31,7 +31,7 @@ const hideAlert = (type) => {
 
 const disableElements = (element, data, e) => {
     if(data['datum_recenze'] != null && data['recenzent'] !== document.querySelector('.id_user_hidden')) {
-        e.disabled = true; 
+        e.readonly = true; 
         e.value == data[element] ? e.checked = true : e.checked = false; 
     }
 }
@@ -51,7 +51,7 @@ const loadReview = async () => {
         document.querySelectorAll('.odbornost').forEach(e => disableElements('odbornost', data, e))
         document.querySelectorAll('.jazyk').forEach(e => disableElements('jazyk', data, e))
         if(data['datum_recenze'] != null && data['recenzent'] !== document.querySelector('.id_user_hidden')) {
-            document.querySelector('.comment').disabled = true;
+            document.querySelector('.comment').readonly = true;
             document.querySelector('.comment').value = data['comment']
             document.querySelector('.submit_review').remove();
         } else {
