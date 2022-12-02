@@ -72,6 +72,7 @@ const addDataToTable = (data) => {
                     element.textContent = data[e]
                     if(e === 'soubor' || e === 'soubor2') {
                         element.setAttribute('href', `../clanky/${data[e]}`)
+                        if(data[e].includes('.pdf') element.setAttribute('target', '_blank');
                     }
             }
         } catch {}
