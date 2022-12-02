@@ -17,7 +17,7 @@ include_once './php/components/header.php';
       <div class="alert alert-danger alert-error alert-dismissible fade show d-none" role="alert">
      </div>
       <div class="container">
-      <div class="d-flex justify-content-center p-2 w-50 m-auto">
+      <div class="d-flex justify-content-center p-2 article-wrap m-auto">
       <div class="card rounded-0" style="width:100%">
 
       <h5 class="card-header info-color white-text bg bg-dark text-center py-4 mb-2 rounded-0">
