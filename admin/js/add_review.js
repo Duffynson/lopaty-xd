@@ -32,7 +32,7 @@ const hideAlert = (type) => {
 const disableElements = (element, data, e) => {
     if(data['datum_recenze'] != null && data['recenzent'] !== document.querySelector('.id_user_hidden')) {
         e.readOnly = true; 
-        e.value == data[element] ? e.checked = true : e.checked = false; 
+        e.value == data[element] ? e.checked = true : e.disabled = true; 
     }
 }
 
