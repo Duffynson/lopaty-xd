@@ -27,7 +27,7 @@
     <br>
     <p>
         Do recenzního řízení jsou přijímány příspěvky tematicky odpovídající zaměření časopisu
-        a formálně upravené dle redakční šablony. <a href="clanky/sablona.docx" class="odkaz">Šablona ke stažení</a>
+        a formálně upravené dle redakční šablony. <a href="RSP/sablona.docx" class="odkaz">Šablona ke stažení</a>
     </p>
 
 
