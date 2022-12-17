@@ -56,7 +56,7 @@ async function loadResponses() {
             text.classList.add('text');
             text.textContent = response.R_text;
             const info = document.createElement('div');
-            info.classList.add("info", "d-flex", "flex-row", "justify-content-end", "align-items-end", "pt-5", "font-weight-bold");
+            info.classList.add("info", "d-flex", "flex-row", "justify-content-end", "align-items-end", "pt-5", "fw-bold");
             info.innerHTML = `${response.R_date}&emsp; ${response.firstname} ${response.lastname} [${roles[response.role]}]`;
             wrap.appendChild(text);
             wrap.appendChild(info);
