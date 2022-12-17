@@ -5,6 +5,7 @@ export const state = {
     'REVIEWS_SUBMITTED': 'Recenze přidány, čeká na redaktora',
     'AUTHOR_REQUIRED': 'Čeká na akci autora',
     'REVIEWERS_REQUIRED': 'Čeká na schválení recenzenty',
+    'REVIEWS_REVIEWED': 'Zkontrolováno recenzenty',
     'EDITOR_REQUIRED': 'Čeká na akci redaktora',
     'ACCEPTED': 'Článek byl přijat',
     'REJECTED': 'Článek byl zamítnut'

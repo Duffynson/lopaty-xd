@@ -99,18 +99,18 @@ include_once './php/components/header.php';
           <tr>
             <th scope="row">Komentář</th>
             <td></td>
-            <td><!--<a href="#" class="btn btn-primary fs-6">Zobrazit</a> --></td>
+            <td></td>
           </tr>
         </tbody>
       </table>
 
-      <div class="process-detail-buttons text-center pb-3">
+      <div class="process-detail-buttons text-center pb-3 d-none">
         <form class="approve-process" style="display: inline-block; margin-right: 10px;">
-          <button type="submit" class="btn-success btn rounded-0" style="padding: 6px 12px;" disabled>Schválit</a>
+          <button type="submit" class="btn-success btn rounded-0" style="padding: 6px 12px;">Schválit</a>
         </form>
 
         <form class="reject-process">
-          <button type="submit" class="btn-danger btn rounded-0" style="padding: 6px 12px;" disabled>Zamítnout</a>
+          <button type="submit" class="btn-danger btn rounded-0" style="padding: 6px 12px;">Zamítnout</a>
         </form>
       </div>
 

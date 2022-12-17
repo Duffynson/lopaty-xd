@@ -54,6 +54,8 @@ const loadReview = async () => {
             document.querySelector('.comment').readOnly = true;
             document.querySelector('.comment').value = data['comment']
             document.querySelector('.submit_review').remove();
+            document.querySelector('.review_date').textContent = data['datum_recenze'];
+            document.querySelector('.review_info').classList.remove('d-none');
         } else {
             document.querySelector('.submit_review').classList.remove('d-none');
         }

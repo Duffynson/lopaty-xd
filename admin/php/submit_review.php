@@ -13,7 +13,7 @@ if (!(empty($aktualnost) || empty($originalita) || empty($odbornost) || empty($j
   $check = mysqli_fetch_assoc($check);
   if($check['recenzent1'] != $_SESSION['id_user'] && $check['recenzent2'] != $_SESSION['id_user']) exit(http_response_code(403));
 
-  mysqli_query($conn, "UPDATE Recenze SET aktualnost = '{$aktualnost}', originalita = '{$originalita}', jazyk = '{$jazyk}', odbornost = '{$odbornost}', comment = '{$comment}', datum_recenze = '{$date}' WHERE ID_recenze = '{$_POST["id_review"]}'");
+  mysqli_query($conn, "UPDATE Recenze SET status = 'REVIEWED', aktualnost = '{$aktualnost}', originalita = '{$originalita}', jazyk = '{$jazyk}', odbornost = '{$odbornost}', comment = '{$comment}', datum_recenze = '{$date}' WHERE ID_recenze = '{$_POST["id_review"]}'");
     
   $res = mysqli_query($conn, "SELECT recenze1, recenze2 FROM Rizeni WHERE ID_rizeni = {$_POST['ID_rizeni']}");
   $res = mysqli_fetch_assoc($res);

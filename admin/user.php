@@ -57,10 +57,10 @@ include_once './php/components/header.php';
     <div class="col-md-4 col-sm-6 mt-1">
       <label for="role" class="form-label"><span class="text-danger">*</span> Role</label>
       <select id="role" class="form-select" name="role">
-        <option value="0" <?php if($role != 0 && $role != 4) echo "disabled"?>>Autor</option>
-        <option value="1" <?php if($role != 1 && $role != 4) echo "disabled"?> >Recenzent</option>
-        <option value="2" <?php if($role != 2 && $role != 4) echo "disabled"?> >Redaktor</option>
-        <option value="3" <?php if($role != 3 && $role != 4) echo "disabled"?> >Šéfredaktor</option>
+        <option value="0" <?php if(($role != 0 && $role != 4) || ($_GET['id'] == $_SESSION['id_user'] && $role == 4)) echo "disabled"?>>Autor</option>
+        <option value="1" <?php if(($role != 1 && $role != 4) || ($_GET['id'] == $_SESSION['id_user'] && $role == 4)) echo "disabled"?> >Recenzent</option>
+        <option value="2" <?php if(($role != 2 && $role != 4) || ($_GET['id'] == $_SESSION['id_user'] && $role == 4)) echo "disabled"?> >Redaktor</option>
+        <option value="3" <?php if(($role != 3 && $role != 4) || ($_GET['id'] == $_SESSION['id_user'] && $role == 4)) echo "disabled"?> >Šéfredaktor</option>
         <option value="4" <?php if($role != 4 && $role != 4) echo "disabled"?> >Administrátor</option>
       </select>
       <div class="role-error error-message text-danger form-text">&nbsp;</div>

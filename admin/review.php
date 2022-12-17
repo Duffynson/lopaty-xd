@@ -132,6 +132,10 @@ include_once './php/components/header.php';
         <label for="textComment">Textový komentář</label>
         <textarea name="textComment" class="rounded-0 form-control comment"></textarea>
       </div>
+
+      <div class="review_info text-center d-none">
+        <span class="fw-bold">Datum recenze:</span>  <span class="review_date"></span>
+      </div>
       <div class="file-path-wrapper m-2 p-2 text-center">
           <input class="file-path validate btn btn-success rounded-0 submit_review d-none" type="submit" name="submit" value="Přidat recenzi">
       </div>

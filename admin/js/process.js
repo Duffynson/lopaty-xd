@@ -68,6 +68,17 @@ const addDataToTable = (data) => {
                         }
                     }
                     break;
+                case 'rizeni1_lastname':
+                case 'rizeni2_lastname':
+                    if(e.includes('1'))
+                        if(data['recenze1_status'] == 'APPROVED') element.innerHTML = `${data[e]} <span class="text-success fw-bold"> SCHVÁLENO</span>`;
+                        else if(data['recenze1_status'] == 'REJECTED') element.innerHTML = `${data[e]} <span class="text-danger fw-bold"> ZAMÍTNUTO</span>`;
+                        else element.textContent = `${data[e]}`
+                    else 
+                        if(data['recenze2_status'] == 'APPROVED') element.innerHTML = `${data[e]} <span class="text-success fw-bold"> SCHVÁLENO</span>`;
+                        else if(data['recenze2_status'] == 'REJECTED') element.innerHTML = `${data[e]} <span class="text-danger fw-bold"> ZAMÍTNUTO</span>`;
+                        else element.textContent = `${data[e]}`;
+                    break;
                 default:
                     element.textContent = data[e]
                     if(e === 'soubor' || e === 'soubor2') {
@@ -77,6 +88,13 @@ const addDataToTable = (data) => {
             }
         } catch {}
     })
+    if(data['recenze1_status'] == 'CREATED' && data['recenze1_recenzent'] == document.querySelector('.id_user_hidden').textContent) {
+        document.querySelector('.process-detail-buttons').classList.remove('d-none');
+    } else if (data['recenze2_status'] == 'CREATED' && data['recenze2_recenzent'] == document.querySelector('.id_user_hidden').textContent) {
+        document.querySelector('.process-detail-buttons').classList.remove('d-none');
+    } else if((document.querySelector('.id_user_hidden').textContent == data['ID_redaktor'] || document.querySelector('.role_hidden') == 4) && (data['status'] != 'REJECTED' && data['status'] != 'ACCEPTED')) {
+        document.querySelector('.process-detail-buttons').classList.remove('d-none');
+    }
 }
 
 const renderProcess = async () => {
@@ -102,7 +120,6 @@ const renderProcess = async () => {
                 } catch{}
             })
         } else if(data['status'] == 'AUTHOR_REQUIRED' && document.querySelector('.id_user_hidden').textContent != data['ID_autor']) {
-            console.log('2');
             const form = document.querySelector('.allow_upload_button');
             const btn = document.querySelector('.allow_upload_button .btn');
             form.classList.remove('d-none');
@@ -123,6 +140,7 @@ const renderProcess = async () => {
                 } catch{}
             })
         }
+        console.log(data);
     } catch(e) {
         console.log(e);
         elements.forEach(e => e.remove())
@@ -141,6 +159,39 @@ document.querySelector('.form_rizeni2').addEventListener('submit', async e => {
     e.preventDefault();
         const response = await fetch(`./php/add_reviewer.php`, {method: 'POST', body: new FormData(e.target)})
         location.href = location.href;
+})
+
+document.querySelector('.approve-process').addEventListener('submit', async e => {
+    e.preventDefault();
+    const response = await fetch(`./php/request_process?id=${new URLSearchParams(window.location.search).get('id')}`, {method: 'GET'});
+    let processData = await response.json();
+    processData = processData[0];
+    const userID = document.querySelector('.id_user_hidden').textContent;
+    if(userID == processData['recenze1_recenzent']) {
+        await fetch(`./php/update_review?ID_rizeni=${processData['ID_rizeni']}&status=APPROVED&id=${processData['recenze1_id']}`, {method: 'GET'});
+    } else if(userID == processData['recenze2_recenzent']) {
+        await fetch(`./php/update_review?ID_rizeni=${processData['ID_rizeni']}&status=APPROVED&id=${processData['recenze2_id']}`, {method: 'GET'});
+    } else if(userID == processData['ID_redaktor']) {
+        await fetch(`./php/update_process?ID_rizeni=${processData['ID_rizeni']}&status=ACCEPTED`, {method: 'GET'});
+    }
+    location.reload();
+})
+
+document.querySelector('.reject-process').addEventListener('submit', async e => {
+    e.preventDefault();
+    const response = await fetch(`./php/request_process?id=${new URLSearchParams(window.location.search).get('id')}`, {method: 'GET'});
+    let processData = await response.json();
+    processData = processData[0];
+    console.log(processData);
+    const userID = document.querySelector('.id_user_hidden').textContent;
+    if(userID == processData['recenze1_recenzent']) {
+        const response = await fetch(`./php/update_review?ID_rizeni=${processData['ID_rizeni']}&status=REJECTED&id=${processData['recenze1_id']}`, {method: 'GET'});
+    } else if(userID == processData['recenze2_recenzent']) {
+        const response = await fetch(`./php/update_review?ID_rizeni=${processData['ID_rizeni']}&status=REJECTED&id=${processData['recenze2_id']}`, {method: 'GET'});
+    } else if(userID == processData['ID_redaktor']) {
+        await fetch(`./php/update_process?ID_rizeni=${processData['ID_rizeni']}&status=REJECTED`, {method: 'GET'});
+    }
+    location.reload();
 })
 
 renderProcess()
