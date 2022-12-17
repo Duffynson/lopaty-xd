@@ -12,9 +12,10 @@ document.querySelector('.add_response_form').addEventListener('submit', async (e
     hideAlert('danger')
 
     try {
-        const response = await fetch(`./php/submit_response.php`, {method: 'POST', body: new FormData(e.target)})
-        const responseJSON = await response.json()
+        let response = await fetch(`./php/submit_response.php`, {method: 'POST', body: new FormData(e.target)})
         e.target.reset();
+        let status = document.querySelector('.creator_id').value == document.querySelector('.id_user_hidden').textContent ? 'WAITING' : 'REACTED';
+        response = await fetch(`./php/update_ticket?status=${status}&id=${document.querySelector('#ticket_id').value}`, {method: 'GET'});
         loadResponses();
     } catch(e) {
         console.log(e);
@@ -26,8 +27,7 @@ document.querySelector('.close_ticket').addEventListener('click', async (e) => {
     e.preventDefault();
     try {
         const response = await fetch(`./php/update_ticket?status=CLOSED&id=${document.querySelector('#ticket_id').value}`, {method: 'GET'});
-        console.log(await response.json());
-        //location.reload();
+        location.reload();
     } catch(e) {
         console.log(e);
     }
@@ -47,6 +47,7 @@ async function loadResponses() {
             document.querySelector('#ticket_text').disabled = false
         
         }
+        document.querySelector('.creator_id').value = responseJSON[0].creator
         responseJSON.forEach(response => {
             const wrap = document.createElement('div');
             wrap.style.boxShadow = "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px";

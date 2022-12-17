@@ -19,6 +19,7 @@ include_once './php/components/header.php';
 
      <form class="container pt-4 add_response_form" method="POST">
         <input type="hidden" value="<?php echo $_GET['id'] ?>" name="ticket_id" id="ticket_id">
+        <input type="hidden" name="creator_id" id="creator_id" class="creator_id">
         <label for="ticket_text" class="form-label"></label>
         <div class="d-flex flex-row justify-content-start">
             <textarea class="flex-fill form-control rounded-0" name="ticket_text" id="ticket_text" rows="6" required disabled></textarea>
