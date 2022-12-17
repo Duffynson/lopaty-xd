@@ -23,6 +23,7 @@ const createReviewerSelect = async (element) => {
 
 const showButtons = (other_data, data, data2, data3, element) => {
     if(other_data[data] == null) {
+        if(other_data['status'] == 'ACCEPTED' || other_data['status'] == 'REJECTED') return;
         if(document.querySelector('.id_user_hidden').textContent == other_data[data2]) {
             element.classList.remove('d-none');
             element.setAttribute('href', `./review?id=${other_data[data3]}`);
@@ -72,11 +73,11 @@ const addDataToTable = (data) => {
                     if(e.includes('1'))
                         if(data['recenze1_status'] == 'APPROVED') element.innerHTML = `${data[e]} <span class="text-success fw-bold"> SCHVÁLENO</span>`;
                         else if(data['recenze1_status'] == 'REJECTED') element.innerHTML = `${data[e]} <span class="text-danger fw-bold"> ZAMÍTNUTO</span>`;
-                        else element.textContent = `${data[e]}`
+                        else element.textContent = data[e] == null ? "" : data[e];
                     else 
                         if(data['recenze2_status'] == 'APPROVED') element.innerHTML = `${data[e]} <span class="text-success fw-bold"> SCHVÁLENO</span>`;
                         else if(data['recenze2_status'] == 'REJECTED') element.innerHTML = `${data[e]} <span class="text-danger fw-bold"> ZAMÍTNUTO</span>`;
-                        else element.textContent = `${data[e]}`;
+                        else element.textContent = data[e] == null ? "" : data[e];
                     break;
                 default:
                     element.textContent = data[e]
@@ -87,9 +88,11 @@ const addDataToTable = (data) => {
             }
         } catch {}
     })
-    if(data['recenze1_status'] == 'CREATED' && data['recenze1_recenzent'] == document.querySelector('.id_user_hidden').textContent) {
+    if(data['status'] == 'ACCEPTED' || data['status'] == 'REJECTED') return;
+
+    if(data['recenze1_status'] == 'CREATED' && data['recenze1_recenzent'] == document.querySelector('.id_user_hidden').textContent && data['status'] == 'REVIEWERS_REQUIRED') {
         document.querySelector('.process-detail-buttons').classList.remove('d-none');
-    } else if (data['recenze2_status'] == 'CREATED' && data['recenze2_recenzent'] == document.querySelector('.id_user_hidden').textContent) {
+    } else if (data['recenze2_status'] == 'CREATED' && data['recenze2_recenzent'] == document.querySelector('.id_user_hidden').textContent && data['status'] == 'REVIEWERS_REQUIRED') {
         document.querySelector('.process-detail-buttons').classList.remove('d-none');
     } else if((document.querySelector('.id_user_hidden').textContent == data['ID_redaktor'] || document.querySelector('.role_hidden') == 4) && (data['status'] != 'REJECTED' && data['status'] != 'ACCEPTED')) {
         document.querySelector('.process-detail-buttons').classList.remove('d-none');
