@@ -2,7 +2,7 @@
    session_start();
    require_once '../../php/db.php';
 
-   if($_SESSION['role'] != 0) exit(http_response_code(403));
+   if($_SESSION['role'] != 0 && $_SESSION['role'] != 4) exit(http_response_code(403));
 
    if(!isset($_POST['articleName']) || empty($_POST['articleName'])) 
       exit(json_encode(array("error" => "Musíte zadat název článku.")));

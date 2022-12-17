@@ -37,7 +37,7 @@
         </h6> "; ?>
           <ul class="nav flex-column">
           <?php 
-            if(isset($_SESSION['id_user']) && $_SESSION['role'] == 0) echo "
+            if(isset($_SESSION['id_user']) && ($_SESSION['role'] == 0 || $_SESSION['role'] == 4)) echo "
             <li class='nav-item'>
                 <a class='nav-link' aria-current='page' href='./article'>
                 <i class='fa-solid fa-plus fa-fw'></i>
