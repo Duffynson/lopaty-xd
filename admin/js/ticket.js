@@ -18,7 +18,6 @@ document.querySelector('.add_response_form').addEventListener('submit', async (e
         response = await fetch(`./php/update_ticket?status=${status}&id=${document.querySelector('#ticket_id').value}`, {method: 'GET'});
         loadResponses();
     } catch(e) {
-        console.log(e);
         showAlert('Nastala chyba při přidání odpovědi.', 'danger', 0)
     }
 })
@@ -29,7 +28,6 @@ document.querySelector('.close_ticket').addEventListener('click', async (e) => {
         const response = await fetch(`./php/update_ticket?status=CLOSED&id=${document.querySelector('#ticket_id').value}`, {method: 'GET'});
         location.reload();
     } catch(e) {
-        console.log(e);
     }
 })
 
@@ -64,7 +62,6 @@ async function loadResponses() {
             document.querySelector('.ticket_responses').appendChild(wrap);
         })
     } catch (e) {
-        console.log(e);
     }
 }
 

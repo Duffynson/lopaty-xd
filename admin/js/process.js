@@ -52,7 +52,6 @@ const addDataToTable = (data) => {
                 case 'rizeni1_firstname':
                 case 'rizeni2_firstname':
                     if(data[e] === null) {
-                        console.log(document.querySelector('.role_hidden').textContent == 4, document.querySelector('.id_user_hidden').textContent == data['ID_redaktor'])
                         if(document.querySelector('.role_hidden').textContent == 4 || document.querySelector('.id_user_hidden').textContent == data['ID_redaktor'])
                             createReviewerSelect(e)
                         else 
@@ -140,9 +139,7 @@ const renderProcess = async () => {
                 } catch{}
             })
         }
-        console.log(data);
     } catch(e) {
-        console.log(e);
         elements.forEach(e => e.remove())
         document.querySelector('.alert-danger').classList.remove('d-none');
         document.querySelector('.alert-danger').textContent = 'Nastala chyba při načítání dat'
@@ -182,7 +179,6 @@ document.querySelector('.reject-process').addEventListener('submit', async e => 
     const response = await fetch(`./php/request_process?id=${new URLSearchParams(window.location.search).get('id')}`, {method: 'GET'});
     let processData = await response.json();
     processData = processData[0];
-    console.log(processData);
     const userID = document.querySelector('.id_user_hidden').textContent;
     if(userID == processData['recenze1_recenzent']) {
         const response = await fetch(`./php/update_review?ID_rizeni=${processData['ID_rizeni']}&status=REJECTED&id=${processData['recenze1_id']}`, {method: 'GET'});
