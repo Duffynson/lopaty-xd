@@ -37,7 +37,7 @@
         </h6> "; ?>
           <ul class="nav flex-column">
           <?php 
-            if(isset($_SESSION['id_user']) && ($_SESSION['role'] == 0 || $_SESSION['role'] == 4)) echo "
+            if(isset($_SESSION['id_user']) && $_SESSION['role'] == 0) echo "
             <li class='nav-item'>
                 <a class='nav-link' aria-current='page' href='./article'>
                 <i class='fa-solid fa-plus fa-fw'></i>
@@ -53,12 +53,10 @@
             </li>";?>
           </ul> 
 
-          <?php if(isset($_SESSION['id_user'])) echo "
-        <h6 class='sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase'>
-          <span>Správa</span>
-        </h6> "; ?>
-
-      <ul class="nav flex-column mb-2">
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+          <span>Ostatní</span>
+          </h6>
+        <ul class="nav flex-column mb-2">
           <?php if(isset($_SESSION['id_user']) && $_SESSION['role'] == 4) echo "
           <li class='nav-item'>
             <a class='nav-link' aria-current='page' href='./users'>
@@ -72,26 +70,21 @@
               <i class='fa-solid fa-user fa-fw'> </i>
               Můj účet
             </a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='./tickets'>
-              <i class='fa-solid fa-envelope fa-fw'></i>
-              Podpora
-            </a>
-          </li>" ?>
-        </ul>
-
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
-          <span>Ostatní</span>
-          </h6>
-        <ul class="nav flex-column mb-2">
+          </li>"; ?>
           <li class="nav-item">
             <a class="nav-link" href="../">
               <i class="fa-solid fa-newspaper fa-fw"></i>
               Časopis
             </a>
           </li>
-          <?php if(isset($_SESSION['id_user'])) echo "
+          <?php if(isset($_SESSION['id_user']) && ($_SESSION['role']) == 4) echo "
+            <li class='nav-item'>
+		<a class='nav-link' href='data_archiving'>
+		<i class='fa fa-cloud-download' aria-hidden='true'></i>
+		Archivace dat
+	        </a>
+	    </li>";
+	if(isset($_SESSION['id_user'])) echo "
           <li class='nav-item'>
             <a class='nav-link' href='../../php/logout'>
               <i class='fa-solid fa-right-from-bracket fa-fw'></i>
