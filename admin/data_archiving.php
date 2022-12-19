@@ -40,7 +40,10 @@ foreach ($tables as $table) {
                  ;
 
 
-$handle = fopen('archieved_data.sql', 'w+');
+
+date_default_timezone_set('Europe/Prague');
+$date = date('Y-m-d-h-i-s', time());
+$handle = fopen($date, 'w+');
 fwrite($handle, $return);
 fclose($handle);
 echo "<script>
