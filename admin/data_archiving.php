@@ -42,7 +42,7 @@ foreach ($tables as $table) {
 
 
 date_default_timezone_set('Europe/Prague');
-$date = date('Y-m-d-h-i-s', time());
+$date = date('Y-m-d-H-i-s', time());
 $handle = fopen("{$date}.sql", 'w+');
 fwrite($handle, $return);
 fclose($handle);
