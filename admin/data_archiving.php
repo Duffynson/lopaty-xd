@@ -43,11 +43,12 @@ foreach ($tables as $table) {
 
 date_default_timezone_set('Europe/Prague');
 $date = date('Y-m-d-H-i-s', time());
-$handle = fopen("{$date}.sql", 'w+');
+$handle = fopen("backup/{$date}.sql", 'w+');
 fwrite($handle, $return);
 fclose($handle);
+header("Content-disposition: attachment; filename=backup/{$date}.sql");
+readfile("backup/{$date}.sql");
 echo "<script>
-             alert('Archivace dat proběhla úspěšně!'); 
              window.history.go(-1);
      </script>";
 
