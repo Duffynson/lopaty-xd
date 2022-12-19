@@ -7,7 +7,8 @@ document.querySelector('.add-article').addEventListener('submit', async (e) => {
         const responseJSON = await response.json()
         const keys = Object.keys(responseJSON)
         showAlert(responseJSON[keys[0]], keys, 0)
-        if(responseJSON[keys] != 'error') {
+        console.log(keys)
+        if(keys != 'error') {
             setTimeout(() => location.href = './processes', 2000);
             e.target.reset();
         }
