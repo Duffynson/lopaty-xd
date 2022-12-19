@@ -5,7 +5,7 @@ $DB_PASS = "uOb3jlOI";
 $DB_NAME = "rsp";
 $con = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
  
- $tables = array();
+$tables = array();
 
 $result = mysqli_query($con,"SHOW TABLES");
 while ($row = mysqli_fetch_row($result)) {
@@ -37,17 +37,14 @@ foreach ($tables as $table) {
         $return .= "\n\n\n";
     
 }
-                 ;
-
-
 
 date_default_timezone_set('Europe/Prague');
 $date = date('Y-m-d-H-i-s', time());
 $handle = fopen("backup/{$date}.sql", 'w+');
 fwrite($handle, $return);
 fclose($handle);
-header("Content-disposition: attachment; filename=backup/{$date}.sql");
-readfile("backup/{$date}.sql");
+header("Content-disposition: attachment; filename={$date}.sql");
+readfile("./backup/{$date}.sql");
 echo "<script>
              window.history.go(-1);
      </script>";
