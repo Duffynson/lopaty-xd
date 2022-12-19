@@ -70,7 +70,13 @@
               <i class='fa-solid fa-user fa-fw'> </i>
               Můj účet
             </a>
-          </li>"; ?>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='./tickets'>
+              <i class='fa-solid fa-envelope fa-fw'></i>
+              Podpora
+            </a>
+          </li>" ?>
           <li class="nav-item">
             <a class="nav-link" href="../">
               <i class="fa-solid fa-newspaper fa-fw"></i>
