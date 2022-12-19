@@ -20,7 +20,7 @@ include_once './php/components/header.php';
      <form class="container pt-4 new_ticket_form">
         <div class="d-flex flex-row justify-content-start gap-4">
             <div class="mb-3 flex-fill">
-                <label for="ticket_title" class="form-label">Název title</label>
+                <label for="ticket_title" class="form-label">Předmět</label>
                 <input type="text" class="form-control rounded-0" id="ticket_title" name="ticket_title" required>
             </div>
             <div class="mb-3 flex-fill">
