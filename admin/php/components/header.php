@@ -79,9 +79,9 @@
           </li>
           <?php if(isset($_SESSION['id_user']) && ($_SESSION['role']) == 4) echo "
             <li class='nav-item'>
-		<a class='nav-link' href='data_archiving'>
-		<i class='fa fa-cloud-download' aria-hidden='true'></i>
-		Archivace dat
+		<a class='nav-link' href='./php/backup.php'>
+		<i class='fa fa-cloud-download fa-fw' aria-hidden='true'></i>
+		Archivovat data
 	        </a>
 	    </li>";
 	if(isset($_SESSION['id_user'])) echo "
